@@ -1,0 +1,16 @@
+<section class="block-education">
+  <h2>{{ title }}</h2>
+
+  <ul>
+  {{ for item of items }}
+    <li>
+      <h3>
+        {{ item.school }}
+        <span>{{ item.start }} - {{ item.end }}</span>
+      </h3>
+
+      {{ item.degree |> md }}
+    </li>
+  {{ /for }}
+  </ul>
+</section>

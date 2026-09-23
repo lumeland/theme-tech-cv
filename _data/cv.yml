@@ -1,0 +1,129 @@
+name: Maya Chen
+about: Product-focused Software Engineer creating thoughtful digital experiences.
+location: '[Austin, Texas, CST](https://www.google.com/maps/place/Austin)'
+avatar: /files/avatar.jpg
+contact:
+  - label: Web
+    url: 'https://maya-chen.example.com'
+  - label: Email
+    url: 'mailto:maya.chen@example.com'
+  - label: Phone
+    url: 'tel:+15550102345'
+  - label: GitHub
+    url: 'https://github.com/mayachen-demo'
+  - label: LinkedIn
+    url: 'https://www.linkedin.com/in/maya-chen-demo/'
+  - label: X
+    url: 'https://x.com/mayachen_demo'
+blocks:
+  - type: text
+    title: About
+    content: >-
+      Product-minded Software Engineer with 8+ years of experience building
+      accessible, high-performance web applications. Passionate about design
+      systems, developer experience, and helping distributed teams ship better
+      products.
+  - type: education
+    title: Education
+    items:
+      - school: University of Washington
+        degree: Bachelor's Degree in Computer Science
+        start: '2012'
+        end: '2016'
+  - type: work
+    title: Work
+    items:
+      - title: Senior Software Engineer
+        company: Northstar Labs
+        company_url: 'https://northstar.example.com/'
+        tags:
+          - Remote
+          - React
+          - TypeScript
+          - Next.js
+          - AI
+        start: '2023'
+        end: Present
+        description: >-
+          Building workflow automation tools that help operations teams reduce
+          repetitive work and make better decisions.
+      - title: Frontend Engineer
+        company: Brightside
+        company_url: 'https://brightside.example.com/'
+        tags:
+          - Remote
+          - React
+          - TypeScript
+          - GraphQL
+          - Design Systems
+        start: '2020'
+        end: '2023'
+        description: >
+          Led frontend development for a collaborative project management
+          platform.
+
+          - Created a shared design system used across four product teams
+
+          - Improved application performance and reduced page load times by 45%
+
+          - Introduced frontend testing standards and component documentation
+      - title: Software Engineer
+        company: Pixel Harbor
+        company_url: 'https://pixelharbor.example.com/'
+        tags:
+          - On Site
+          - JavaScript
+          - React
+          - Node.js
+          - PostgreSQL
+        start: '2016'
+        end: '2020'
+        description: >
+          Developed customer-facing web applications for startups and
+          established technology companies.
+
+          - Built dashboards and internal tools used by thousands of employees
+
+          - Designed REST APIs and integrations with third-party services
+
+          - Mentored junior developers and led technical workshops
+  - type: tech
+    title: skills
+    items:
+      - React
+      - Next.js
+      - TypeScript
+      - Node.js
+      - AI/LLMs
+      - Tailwind CSS
+      - Design Systems
+      - Accessibility
+      - GraphQL
+      - PostgreSQL
+      - Web Performance
+      - Team Mentoring
+  - type: projects
+    title: Side projects
+    items:
+      - title: Trailmark
+        url: 'https://trailmark.example.com/'
+        tags:
+          - TypeScript
+          - React
+          - Maps
+          - Open Source
+        description: Collaborative trip planning tool for outdoor adventures
+      - title: Briefly
+        url: 'https://briefly.example.com/'
+        tags:
+          - TypeScript
+          - Next.js
+          - AI
+        description: AI-powered meeting notes and project summaries
+      - title: Focusboard
+        url: 'https://github.com/mayachen-demo/focusboard'
+        tags:
+          - React
+          - TypeScript
+          - Tailwind CSS
+        description: Minimal open source kanban board for personal projects

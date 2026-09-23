@@ -1,0 +1,264 @@
+:root {
+  --font-title: "Geist Mono", system-ui, sans-serif;
+  --font-text: "Geist Mono", system-ui, sans-serif;
+  --color-background: #f6f5f3;
+  --color-title: #12150c;
+  --color-link: currentColor;
+  --color-text: color-mix(in oklch, var(--color-title) 75%, var(--color-background));
+  --color-shadow: color-mix(in oklch, var(--color-title) 10%, var(--color-background));
+
+  --font-bold: 700;
+  --font-size-0: .85rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.3rem;
+  --font-size-3: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  interpolate-size: allow-keywords;
+  font-family: var(--font-text);
+  font-size: 100%;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  padding: 4rem 2rem;
+  max-width: 80ch;
+  margin: 0 auto;
+  font-size: var(--font-size-1);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: var(--font-bold);
+}
+
+strong {
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+p, ul {
+  margin-block: .5lh;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .25em;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+svg {
+  display: block;
+  stroke: currentColor;
+}
+
+@scope (.cv-header) {
+  h1 {
+    margin: 0 0 .25em;
+    font-size: var(--font-size-3);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-title);
+  }
+
+  p {
+    margin: 0;
+    font-size: var(--font-size-2);
+    letter-spacing: -0.01em;
+    color: var(--color-title);
+    text-wrap: balance;
+  }
+
+  img {
+    max-width: min(50%, 120px);
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    float: right;
+    margin: 0 0 0 1em;
+  }
+}
+
+@scope (.cv-location) {
+  :scope {
+    display: flex;
+    gap: 2ch;
+    margin-top: 2em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@scope (.cv-contact) {
+  :scope {
+    display: flex;
+    gap: 2ch;
+    font-style: normal;
+    margin-top: 1em;
+  }
+
+  p {
+    margin: 0;
+    display: flex;
+    gap: 2ch;
+  }
+
+  a {
+    font-weight: var(--font-bold);
+  }
+}
+
+@scope (.cv-blocks) {
+  :scope {
+    display: grid;
+    row-gap: 4em;
+    margin-top: 4em;
+  }
+
+  h2 {
+    font-size: var(--font-size-2);
+    letter-spacing: -0.01em;
+    margin-block: 0 1em;
+    border-bottom: solid 1px;
+    color: var(--color-title);
+  }
+
+  h3 {
+    font-size: var(--font-size-1);
+    color: var(--color-title);
+    margin: 0;
+  }
+}
+
+@scope (.cv-tags) {
+  :scope {
+    list-style-type: "";
+    margin: 1em 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25em;
+    font-size: var(--font-size-0);
+  }
+  li {
+    padding: .1em .5em;
+    color: var(--color-title);
+    background-color: var(--color-shadow);
+    border-radius: 6px;
+  }
+}
+
+@scope (.block-tech) {
+  ul {
+    list-style-type: "";
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25em;
+  }
+  li {
+    padding: .25em .5em;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-radius: 6px;
+  }
+}
+
+@scope (.block-education) {
+  ul {
+    margin: 2em 0 0;
+    padding: 0 0 0 1em;
+    display: grid;
+    row-gap: 2em;
+  }
+  h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 1ch;
+    justify-content: space-between;
+
+    span {
+      font-weight: normal;
+      color: var(--color-text);
+      font-size: var(--font-size-0);
+    }
+  }
+
+  p {
+    margin: 0;
+
+    + p {
+      margin-top: 1lh
+    }
+  }
+}
+
+@scope (.block-work) {
+  :scope > ul {
+    margin: 2em 0 0;
+    padding: 0 0 0 1em;
+    display: grid;
+    row-gap: 2em;
+  }
+
+  h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 1ch;
+    justify-content: space-between;
+
+    span {
+      font-weight: normal;
+      font-size: var(--font-size-0);
+    }
+  }
+
+  header p {
+    margin: 0;
+    font-family: var(--font-title);
+  }
+}
+
+@scope (.block-projects) {
+  :scope > ul {
+    list-style-type: "";
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+
+    > li {
+      border: solid 1px var(--color-shadow);
+      border-radius: 6px;
+      padding: 1em;
+      display: grid;
+      grid-template-rows: auto 1fr;
+
+      > div {
+        font-size: var(--font-size-0);
+      }
+    }
+  }
+}

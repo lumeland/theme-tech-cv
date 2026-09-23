@@ -1,0 +1,42 @@
+---
+title: Bartosz Jarocki - Resume
+lang: en
+---
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="cv-header">
+    <img src="{{ cv.avatar }}" alt="Avatar">
+
+    <h1>{{ cv.name }}</h1>
+    {{ cv.about |> md }}
+  </header>
+
+  <div class="cv-location">
+    <img src="{{ "map-pin" |> icon("lucide") }}" inline>
+    {{ cv.location |> md }}
+  </div>
+
+  <address class="cv-contact">
+    <img src="{{ "link" |> icon("lucide") }}" inline>
+
+    <p>
+      {{ for { url, label } of cv.contact }}
+        <a href="{{ url }}">{{ label }}</a>
+      {{ /for }}
+    </p>
+  </address>
+
+  <div class="cv-blocks">
+    {{ for block of cv.blocks }}
+      {{ await comp[block.type](block) }}
+    {{ /for }}
+  </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<section class="block-work">
+  <h2>{{ title }}</h2>
+  
+  <ul>
+  {{ for item of items }}
+    <li>
+      <header>
+        <h3>
+          {{ item.title }}
+          <span>{{ item.start }} - {{ item.end }}</span>
+        </h3>
+
+        {{ if item.company }}  
+        <p>
+          {{ if item.company_url }}
+          <a href="{{ item.company_url }}">{{ item.company }}</a>
+          {{ else }}
+          {{ item.company }}
+          {{ /if }}
+        </p>
+        {{ /if }}
+      </header>
+
+      {{ if item.tags |> !empty }}
+      <ul class="cv-tags">
+        {{ for tag of item.tags }}
+        <li>{{ tag }}</li>
+        {{ /for }}
+      </ul>
+      {{ /if }}
+
+      {{ item.description |> md }}
+    </li>
+  {{ /for }}
+  </ul>
+</section>

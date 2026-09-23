@@ -1,0 +1,29 @@
+<section class="block-projects">
+  <h2>{{ title }}</h2>
+  
+  <ul>
+  {{ for item of items }}
+    <li>
+      <h3>
+        {{ if item.url }}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {{ else }}
+        {{ item.title }}
+        {{ /if }}
+      </h3>
+
+      <div>
+        {{ item.description |> md }}
+      </div>
+
+      {{ if item.tags |> !empty }}
+      <ul class="cv-tags">
+        {{ for tag of item.tags }}
+        <li>{{ tag }}</li>
+        {{ /for }}
+      </ul>
+      {{ /if }}
+    </li>
+  {{ /for }}
+  </ul>
+</section>
