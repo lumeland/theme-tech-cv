@@ -1,0 +1,27 @@
+name: Publish on Codeberg Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Codeberg Pages
+    runs-on: codeberg-small
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v5
+
+      - name: Setup Deno environment
+        uses: https://github.com/denoland/setup-deno@v2
+        with:
+          cache: true
+
+      - name: Build site
+        run: deno task build --location=https://lume.codeberg.page/theme-tech-cv
+      - uses: https://codeberg.org/git-pages/action@v2
+        with:
+          site: "https://lume.codeberg.page/theme-tech-cv"
+          token: ${{ forge.token }}
+          source: _site/
