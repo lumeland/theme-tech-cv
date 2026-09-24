@@ -8,6 +8,7 @@ lang: en
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
+  <meta name="supported-color-schemes" content="light dark">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -19,12 +20,12 @@ lang: en
   </header>
 
   <div class="cv-location">
-    <img src="{{ "map-pin" |> icon("lucide") }}" inline>
+    <img src="{{ "map-pin" |> icon("tabler", "outline") }}" inline>
     {{ cv.location |> md }}
   </div>
 
   <address class="cv-contact">
-    <img src="{{ "link" |> icon("lucide") }}" inline>
+    <img src="{{ "link" |> icon("tabler", "outline") }}" inline>
 
     <p>
       {{ for { url, label } of cv.contact }}

@@ -88,20 +88,12 @@ blocks:
 
           - Mentored junior developers and led technical workshops
   - type: tech
-    title: skills
+    title: Skills
     items:
-      - React
-      - Next.js
-      - TypeScript
-      - Node.js
-      - AI/LLMs
-      - Tailwind CSS
-      - Design Systems
-      - Accessibility
-      - GraphQL
-      - PostgreSQL
-      - Web Performance
-      - Team Mentoring
+      - label: React
+        icon: brand-react
+      - label: Next.js
+        icon: brand-nextjs
   - type: projects
     title: Side projects
     items:

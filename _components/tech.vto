@@ -3,7 +3,12 @@
   
   <ul>
     {{ for item of items }}
-    <li>{{ item }}</li>
+    <li>
+      {{ if item.icon }}
+        <img src="{{ item.icon |> icon('tabler', 'outline') }}" inline>
+      {{ /if }}
+      {{ item.label }}
+    </li>
     {{ /for }}
   </ul>
 </section>

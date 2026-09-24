@@ -4,6 +4,7 @@ const cms = lumeCMS();
 
 cms.document({
   label: "Resume",
+  icon: "article",
   name: "cv",
   store: "src:_data/cv.yml",
   previewUrl: () => "/",
@@ -91,7 +92,18 @@ cms.document({
           type: "object",
           fields: [
             "title: text",
-            "items: list"
+            {
+              name: "items",
+              type: "object-list",
+              fields: [
+                "label: text",
+                {
+                  name: "icon",
+                  description: "Icons from <a href='https://tabler.io/icons' target=_blank>tabler</a>",
+                  type: "text",
+                }
+              ]
+            }
           ]
         },
       ]
@@ -101,6 +113,7 @@ cms.document({
 
 cms.document({
   name: "Settings",
+  icon: "gear",
   store: "src:index.vto",
   previewUrl: () => "/",
   fields: [
@@ -111,6 +124,7 @@ cms.document({
 
 cms.document({
   name: "Style",
+  icon: "file-css",
   store: "src:style.css",
   previewUrl: () => "/",
 })

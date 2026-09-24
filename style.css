@@ -1,8 +1,8 @@
 :root {
-  --font-title: "Geist Mono", system-ui, sans-serif;
   --font-text: "Geist Mono", system-ui, sans-serif;
+  --font-title: var(--font-text);
   --color-background: #f6f5f3;
-  --color-title: #12150c;
+  --color-title: #0c1115;
   --color-link: currentColor;
   --color-text: color-mix(in oklch, var(--color-title) 75%, var(--color-background));
   --color-shadow: color-mix(in oklch, var(--color-title) 10%, var(--color-background));
@@ -12,7 +12,13 @@
   --font-size-1: 1rem;
   --font-size-2: 1.3rem;
   --font-size-3: 2rem;
+
+  @media (prefers-color-scheme: dark) {
+    --color-background: #0c1115;
+    --color-title: #c2dbe7;
+  }
 }
+
 
 * {
   box-sizing: border-box;
@@ -84,6 +90,7 @@ svg {
     letter-spacing: -0.01em;
     color: var(--color-title);
     text-wrap: balance;
+    line-height: 1.4;
   }
 
   img {
@@ -92,6 +99,13 @@ svg {
     border-radius: 6px;
     float: right;
     margin: 0 0 0 1em;
+  }
+
+  @media (width < 500px) {
+    img {
+      float: none;
+      margin: 0 auto 1em;
+    }
   }
 }
 
@@ -118,7 +132,9 @@ svg {
   p {
     margin: 0;
     display: flex;
-    gap: 2ch;
+    column-gap: 2ch;
+    row-gap: 0.25lh;
+    flex-wrap: wrap;
   }
 
   a {
@@ -137,7 +153,7 @@ svg {
     font-size: var(--font-size-2);
     letter-spacing: -0.01em;
     margin-block: 0 1em;
-    border-bottom: solid 1px;
+    border-bottom: solid 1px var(--color-shadow);
     color: var(--color-title);
   }
 
@@ -180,6 +196,12 @@ svg {
     background-color: var(--color-text);
     color: var(--color-background);
     border-radius: 6px;
+    display: flex;
+    gap: 1ch;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -237,6 +259,7 @@ svg {
   header p {
     margin: 0;
     font-family: var(--font-title);
+    color: var(--color-title);
   }
 }
 
