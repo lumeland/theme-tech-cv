@@ -1,6 +1,6 @@
-import lumeCMS from "lume/cms/mod.ts";
+import createCms from "@lumeland/cms";
 
-const cms = lumeCMS();
+const cms = createCms();
 
 cms.document({
   label: "Resume",
@@ -16,10 +16,7 @@ cms.document({
     {
       name: "contact",
       type: "object-list",
-      fields: [
-        "label: text",
-        "url: url"
-      ]
+      fields: ["label: text", "url: url"],
     },
     {
       name: "blocks",
@@ -28,10 +25,7 @@ cms.document({
         {
           name: "text",
           type: "object",
-          fields: [
-            "title: text",
-            "content: markdown"
-          ]
+          fields: ["title: text", "content: markdown"],
         },
         {
           name: "education",
@@ -41,14 +35,9 @@ cms.document({
             {
               name: "items",
               type: "object-list",
-              fields: [
-                "school: text",
-                "degree: text",
-                "start: text",
-                "end: text",
-              ]
-            }
-          ]
+              fields: ["school: text", "degree: text", "start: text", "end: text"],
+            },
+          ],
         },
         {
           name: "work",
@@ -66,9 +55,9 @@ cms.document({
                 "start: text",
                 "end: text",
                 "description: markdown",
-              ]
-            }
-          ]
+              ],
+            },
+          ],
         },
         {
           name: "projects",
@@ -78,14 +67,9 @@ cms.document({
             {
               name: "items",
               type: "object-list",
-              fields: [
-                "title: text",
-                "url: url",
-                "tags: list",
-                "description: markdown",
-              ]
-            }
-          ]
+              fields: ["title: text", "url: url", "tags: list", "description: markdown"],
+            },
+          ],
         },
         {
           name: "tech",
@@ -99,15 +83,16 @@ cms.document({
                 "label: text",
                 {
                   name: "icon",
-                  description: "Icons from <a href='https://tabler.io/icons' target=_blank>tabler</a>",
+                  description:
+                    "Icons from <a href='https://tabler.io/icons' target=_blank>tabler</a>",
                   type: "text",
-                }
-              ]
-            }
-          ]
+                },
+              ],
+            },
+          ],
         },
-      ]
-    }
+      ],
+    },
   ],
 });
 
@@ -116,22 +101,19 @@ cms.document({
   icon: "gear",
   store: "src:index.vto",
   previewUrl: () => "/",
-  fields: [
-    "title: text",
-    "lang: text",
-  ]
-})
+  fields: ["title: text", "lang: text"],
+});
 
 cms.document({
   name: "Style",
   icon: "file-css",
   store: "src:style.css",
   previewUrl: () => "/",
-})
+});
 
 cms.upload({
   name: "files",
   store: "src:files",
-})
+});
 
 export default cms;

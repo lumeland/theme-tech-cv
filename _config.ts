@@ -1,7 +1,9 @@
-import lume from "lume/mod.ts";
+import lume from "@lumeland/lume";
 import theme from "./mod.ts";
 
-const site = lume();
+const site = lume({
+  src: "src",
+});
 
 site.use(theme());
 
