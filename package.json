@@ -2,6 +2,9 @@
   "name": "@lumeland/theme-tech-cv",
   "version": "1.0.0",
   "description": "Lume theme to create a tech CV online.",
+  "keywords": [
+    "lume-theme"
+  ],
   "license": "MIT",
   "author": "Óscar Otero",
   "files": [
