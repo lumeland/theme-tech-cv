@@ -12,14 +12,17 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v5
+      
+      - name: Setup pnpm
+        uses: https://github.com/pnpm/action-setup@v6
 
-      - name: Setup Deno environment
-        uses: https://github.com/denoland/setup-deno@v2
+      - name: Setup Node.js
+        uses: https://github.com/actions/setup-node@v7
         with:
-          cache: true
+          node-version: 24.x
 
       - name: Build site
-        run: deno task build --location=https://lume.codeberg.page/theme-tech-cv
+        run: pnpm lume build --location=https://lume.codeberg.page/theme-tech-cv
       - uses: https://codeberg.org/git-pages/action@v2
         with:
           site: "https://lume.codeberg.page/theme-tech-cv"

@@ -2,6 +2,8 @@ import basePath from "@lumeland/plugin-base-path";
 import icons from "@lumeland/plugin-icons";
 import googleFonts from "@lumeland/plugin-google-fonts";
 import inline from "@lumeland/plugin-inline";
+import lumeCms from "@lumeland/plugin-cms";
+import cms from "./cms.ts";
 
 export interface Options {
   fonts?: string;
@@ -19,10 +21,16 @@ export default function (options?: Options) {
     site.use(googleFonts({ fonts }));
     site.use(basePath());
     site.use(inline());
+    site.use(lumeCms({ cms }));
 
     // Add remote files
     site.remote("/", import.meta.resolve("./src"), ["_components/**"]);
   };
 }
 
-export const setup: Lume.Archetype = async function* () {};
+export const setup: Lume.Archetype = function* () {
+  yield {
+    url: import.meta.resolve("./src"),
+    files: ["_data/*", "style.css", "index.vto", "files/*"],
+  };
+};
